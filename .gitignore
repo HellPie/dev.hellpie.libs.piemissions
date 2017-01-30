@@ -1,0 +1,202 @@
+###############################################################################
+###                              PRIVATE FILES                              ###
+###############################################################################
+
+# - Private Gradle
+local.properties
+
+# Only useful if you work in my team, these are private projects
+# so nobody should really need them. Here for completeness.
+# - "Lumen" Buildbot
+.lumen/
+build-config.lumen
+build-data.lumen
+customs.lumen
+
+# - "Bella" Extension
+.bella/
+bella.properties
+
+# - AI Informations
+.coral/
+coral.config
+coral.db
+
+# - Signing Configurations (make sure to steal this if you steal something)
+*.jks
+*.keystore
+
+
+###############################################################################
+###                          MAVEN AND REPO FILES                           ###
+###############################################################################
+
+# - Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# - Private signing
+gradle-app.settings
+signing.properties
+
+
+###############################################################################
+###                          ANDROID STUDIO FILES                           ###
+###############################################################################
+
+#------------------------------------------------------------------------------#
+#                                   GENERIC                                    #
+#------------------------------------------------------------------------------#
+
+# - Generated folders
+bin/
+gen/
+
+# - Proguard informations
+proguard/
+
+# - Android Packages
+*.apk
+*.ap_
+
+# - Dalvik VM
+*.dex
+
+# - Java Classes
+*.class
+
+# - Java Native
+*.o
+*.out
+*.dylib
+*.obj
+*.so
+
+# - Logs
+log/
+*.log
+
+#------------------------------------------------------------------------------#
+#                          STUDIO/INTELLIJ SPECIFIC                            #
+#------------------------------------------------------------------------------#
+
+# - Gradle
+.idea/gradle.xml
+.gradle/
+
+# - Maven
+target/
+
+# - Build caches
+build/
+*/build/
+out/
+*/out/
+
+# - NDK Build caches
+.externalNativeBuild
+
+# - Navigation cache
+.navigation/
+
+# - App Captures
+captures/
+
+# - IDEA Configuration (user-specific informations)
+.idea/dictionaries/
+.idea/libraries/
+.idea/shelf/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/misc.xml
+
+# - IDEA Configuration (user-specific data)
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# - IDEA Mongo Plugin
+.idea/mongoSettings.xml
+
+# - IDEA JIRA Plugin
+atlassian-ide-plugin.xml
+
+# - Android Studio Crashlytics Plugin
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# - Project Configurations
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
+
+###############################################################################
+###                         OPERATIVE SYSTEM FILES                          ###
+###############################################################################
+
+#------------------------------------------------------------------------------#
+#                                    LINUX                                     #
+#------------------------------------------------------------------------------#
+
+# - Backups
+~*
+
+# - Folder configuration
+.directory
+
+# - Trash copies
+.Trash-*
+
+#------------------------------------------------------------------------------#
+#                                  MAC OS X                                    #
+#------------------------------------------------------------------------------#
+# Mac OS is worse than Windows with all this excessive, horrible data caching...
+
+# - Chached generic files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# - Thumbnails
+._*
+
+# - Device Caches (if repo synced to root of a device)
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# - AFP Sharing Informations (if repo is shared via AFP)
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#------------------------------------------------------------------------------#
+#                                   WINDOWS                                    #
+#------------------------------------------------------------------------------#
+# - Thumbnails
+Thumbs.db
+ehthumbs.db
+
+# - Folder Configuration
+Desktop.ini
+
+# - Trash copies
+$RECYCLE.BIN/
+
+# - Links
+*.lnk
