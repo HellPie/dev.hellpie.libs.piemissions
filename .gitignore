@@ -110,6 +110,10 @@ captures/
 # - IDEA JIRA Plugin
 atlassian-ide-plugin.xml
 
+# - IDEA Markdown Plugin
+.idea/markdown-navigator/profiles_settings.xml
+markdown-navigator.xml
+
 # - Android Studio Crashlytics Plugin
 com_crashlytics_export_strings.xml
 crashlytics.properties
