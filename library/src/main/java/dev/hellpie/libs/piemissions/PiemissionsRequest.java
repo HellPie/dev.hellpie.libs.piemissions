@@ -22,13 +22,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public final class PiemissionRequest {
+public final class PiemissionsRequest {
 
 	private final int code;
 	private ArrayList<String> permissions;
 	private PiemissionsCallback callback = new BasePiemissionsCallback();
 
-	public PiemissionRequest(int requestCode, @NonNull String... permissions) {
+	public PiemissionsRequest(int requestCode, @NonNull String... permissions) {
 		this.code = requestCode;
 		this.permissions = new ArrayList<>(Arrays.asList(permissions));
 	}
@@ -60,6 +60,6 @@ public final class PiemissionRequest {
 
 	@Override
 	public boolean equals(Object o) {
-		return o != null && o instanceof PiemissionRequest && ((PiemissionRequest) o).getCode() == code;
+		return o != null && o instanceof PiemissionsRequest && ((PiemissionsRequest) o).getCode() == code;
 	}
 }

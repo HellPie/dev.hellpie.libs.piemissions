@@ -30,7 +30,7 @@ import java.util.List;
 
 public final class PiemissionsUtils {
 
-	private static ArrayList<PiemissionRequest> queue = new ArrayList<>(0);
+	private static ArrayList<PiemissionsRequest> queue = new ArrayList<>(0);
 	private static WeakReference<Activity> bindReference;
 
 	private PiemissionsUtils() {
@@ -41,7 +41,7 @@ public final class PiemissionsUtils {
 		bindReference = new WeakReference<>(activity);
 	}
 
-	public static void requestPermission(@NonNull PiemissionRequest request) {
+	public static void requestPermission(@NonNull PiemissionsRequest request) {
 		Activity bind = bindReference.get();
 		if(bind == null) throw new NullPointerException("init() has not been called yet.");
 
@@ -58,7 +58,7 @@ public final class PiemissionsUtils {
 	}
 
 	public static void onRequestResult(int requestCode, String[] permissions, int[] grantResults) {
-		PiemissionRequest request = new PiemissionRequest(requestCode, "");
+		PiemissionsRequest request = new PiemissionsRequest(requestCode, "");
 		if(queue.contains(request)) {
 			request = queue.get(queue.indexOf(request));
 			queue.remove(request);
@@ -78,7 +78,7 @@ public final class PiemissionsUtils {
 				request.getCallback().onGranted();
 			} else {
 				if(request.getCallback().onDenied(ratPerms)) {
-					PiemissionRequest newRequest = new PiemissionRequest(request.getCode());
+					PiemissionsRequest newRequest = new PiemissionsRequest(request.getCode());
 
 					ArrayList<String> ratPermsAble = new ArrayList<>(0);
 					for(String key : ratPerms.keySet()) {
@@ -89,7 +89,7 @@ public final class PiemissionsUtils {
 					newRequest.setCallback(request.getCallback());
 
 					if(ratPerms.isEmpty()) {
-						final PiemissionRequest finalRequest = request;
+						final PiemissionsRequest finalRequest = request;
 						newRequest.setCallback(new BasePiemissionsCallback() {
 							@Override
 							public boolean onDenied(HashMap<String, Boolean> ratPerms) {

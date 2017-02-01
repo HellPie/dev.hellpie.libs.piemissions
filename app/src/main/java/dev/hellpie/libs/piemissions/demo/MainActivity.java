@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import dev.hellpie.libs.piemissions.PiemissionRequest;
+import dev.hellpie.libs.piemissions.PiemissionsRequest;
 import dev.hellpie.libs.piemissions.PiemissionsCallback;
 import dev.hellpie.libs.piemissions.PiemissionsUtils;
 
@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 	private Button askAgainButton;
 
-	// We store the PiemissionRequest here because we need to access it from another method
+	// We store the PiemissionsRequest here because we need to access it from another method
 	// within this class (onClick() to ask again).
-	// A PiemissionRequest manages asking the system to get the requested permissions and uses
+	// A PiemissionsRequest manages asking the system to get the requested permissions and uses
 	// a unique number to this application to identify which request this is.
-	private PiemissionRequest request = new PiemissionRequest(PERMISSIONS_CODE, PERMISSIONS);
+	private PiemissionsRequest request = new PiemissionsRequest(PERMISSIONS_CODE, PERMISSIONS);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		// Permissions in Android 6+ are at runtime, init my helper library
 		PiemissionsUtils.init(this);
 
-		// Create a new Callback class that will be called by Piemissions Utils whenever a PiemissionRequest
+		// Create a new Callback class that will be called by Piemissions Utils whenever a PiemissionsRequest
 		// is executed and the user has replied to all the permission requested
 		request.setCallback(new PiemissionsCallback() {
 			@Override
